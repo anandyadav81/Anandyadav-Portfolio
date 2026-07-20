@@ -494,17 +494,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);text-align:cente
 
 <script>
 var certs = {
-  cisco: 'https://drive.google.com/file/d/1US98F3-HQWeUutqRLRJRcKt9bvi4Mzfv/preview'
-  tata: 'https://drive.google.com/file/d/1Jtsuy2vojZ9Hqxnrgqf4GmiCFYd7hGfo/preview'
-  hackerrank: 'https://drive.google.com/file/d/181cc83_zTuGgWgowqHePAEpBKq7hzhca/preview'
-  ec: 'https://drive.google.com/file/d/1FW40nlgESAOrCfHMzei6Bf1j0oBoNFo9/preview'
-  google: 'https://drive.google.com/file/d/1bAFrPxM-9uIORW5C7XigS4rvTyFL8Zaf/preview'
+  cisco: 'https://drive.google.com/file/d/1US98F3-HQWeUutqRLRJRcKt9bvi4Mzfv/view'
+  tata: 'https://drive.google.com/file/d/1Jtsuy2vojZ9Hqxnrgqf4GmiCFYd7hGfo/view'
+  hackerrank: 'https://drive.google.com/file/d/181cc83_zTuGgWgowqHePAEpBKq7hzhca/view'
+  ec: 'https://drive.google.com/file/d/1FW40nlgESAOrCfHMzei6Bf1j0oBoNFo9/view'
+  google: 'https://drive.google.com/file/d/1bAFrPxM-9uIORW5C7XigS4rvTyFL8Zaf/view'
 };
 function openCert(k){
-  var modal = document.getElementById('cert-modal-inner');
-  modal.innerHTML = '<button id="cert-close" onclick="closeCert()">✕</button><iframe src="' + certs[k] + '" style="width:100%;height:80vh;border:none;"></iframe>';
-  document.getElementById('cert-modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  window.open(certs[k].replace('/preview', '/view'), '_blank');
 }
 function closeCert(){
   document.getElementById('cert-modal').classList.remove('open');
